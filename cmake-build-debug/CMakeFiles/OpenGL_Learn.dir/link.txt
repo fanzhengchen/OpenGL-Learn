@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/OpenGL_Learn.dir/main.cpp.o CMakeFiles/OpenGL_Learn.dir/Shader.cpp.o CMakeFiles/OpenGL_Learn.dir/opengl.cpp.o  -o OpenGL_Learn -lGLEW -lGL -lGLU -lglfw 
