@@ -1,4 +1,6 @@
-/home/mark/clion-2017.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/mark/CLionProjects/OpenGL-Learn
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/fanzhengchen/CLionProjects/OpenGL-Learn
+system is Darwin-17.4.0
+ -framework OpenGL -D__APPLE__
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug
+-- Build files have been written to: /Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug

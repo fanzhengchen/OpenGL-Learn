@@ -8,98 +8,96 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
+				<Option working_dir="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
+				<Option working_dir="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
+				<Option working_dir="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OpenGL_Learn">
-				<Option output="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/OpenGL_Learn" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
+				<Option output="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/OpenGL_Learn" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 OpenGL_Learn"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 OpenGL_Learn"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OpenGL_Learn/fast">
-				<Option output="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/OpenGL_Learn" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
+				<Option output="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/OpenGL_Learn" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 OpenGL_Learn/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/mark/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 OpenGL_Learn/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fanzhengchen/CLionProjects/OpenGL-Learn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/Shader.cpp">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/Shader.cpp">
 			<Option target="OpenGL_Learn"/>
 		</Unit>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/Shader.h">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/Shader.h">
 			<Option target="OpenGL_Learn"/>
 		</Unit>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/main.cpp">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/main.cpp">
 			<Option target="OpenGL_Learn"/>
 		</Unit>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/opengl.cpp">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/opengl.cpp">
 			<Option target="OpenGL_Learn"/>
 		</Unit>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/opengl.h">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/opengl.h">
 			<Option target="OpenGL_Learn"/>
 		</Unit>
-		<Unit filename="/home/mark/CLionProjects/OpenGL-Learn/CMakeLists.txt">
+		<Unit filename="/Users/fanzhengchen/CLionProjects/OpenGL-Learn/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
