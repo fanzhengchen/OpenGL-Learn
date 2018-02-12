@@ -30,7 +30,7 @@ int OpenGL::init(GLFWkeyfun key_callback) {
     }
     glfwMakeContextCurrent(window);
     // Set the required callback functions
-    //glfwSetKeyCallback(window, key_callback);
+    glfwSetKeyCallback(window, key_callback);
 
     // Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
     glewExperimental = GL_TRUE;
@@ -51,7 +51,7 @@ GLFWwindow *OpenGL::getWindow() {
     return window;
 }
 
-int OpenGL::run(Shader &shader, int VAO) {
+int OpenGL::run(Shader &shader, int VAO, int numberOfVertices) {
     // Game loop
     while (!glfwWindowShouldClose(window)) {
         // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
@@ -64,7 +64,7 @@ int OpenGL::run(Shader &shader, int VAO) {
 
         shader.Use();
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, numberOfVertices);
         glBindVertexArray(0);
         // Swap the screen buffers
         glfwSwapBuffers(window);

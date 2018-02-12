@@ -20,7 +20,7 @@ public:
 
     int init(GLFWkeyfun);
 
-    int run(Shader&, int);
+    int run(Shader&, int, int);
 
     GLFWwindow *getWindow();
 };
