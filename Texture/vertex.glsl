@@ -13,5 +13,5 @@ void main()
 
     ourColor = color;
 
-    TexCoord = texCoord;
+    TexCoord = vec2(texCoord.x, 1.0f - texCoord.y);
 }

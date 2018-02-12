@@ -161,21 +161,24 @@ int main() {
 
     /**
      * 第二张 texture 和 图片对应
+     * 这里设成 1 就可以和上一张图片搞一起了
      */
-//    glGenTextures(2, &texture2);
-//    glBindTexture(GL_TEXTURE_2D, texture2);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//
-//    images = SOIL_load_image("../res/awesomeface.png", &width, &height, 0, SOIL_LOAD_RGB);
-//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, images);
-//    glGenerateMipmap(GL_TEXTURE_2D);
-//    SOIL_free_image_data(images);
-//    glBindTexture(GL_TEXTURE_2D, 0);
+    glGenTextures(1, &texture2);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    images = SOIL_load_image("../res/awesomeface.png", &width, &height, 0, SOIL_LOAD_RGB);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, images);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+
+    SOIL_free_image_data(images);
+    glBindTexture(GL_TEXTURE_2D, 0);
 
 
     while (!glfwWindowShouldClose(window)) {
@@ -187,21 +190,34 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glBindTexture(GL_TEXTURE_2D, texture1);
+        //glBindTexture(GL_TEXTURE_2D, texture1);
         shader.Use();
-        GLuint& shaderProgram = shader.Program;
+        GLuint shaderProgram = shader.Program;
+
+        /**
+         * GL_TEXTURE[0-16] 这里要设置纹理单元，就是哪张图片会对应哪个的sampler2D 采样器
+         * 然后在 shader 脚本里面 texture(sampler2D, texCoord)  采样器和 纹理坐标是参数， 搞在一起
+         * 用glsl 的 texture函数 就可以得到一个4维向量，就是rgba
+         */
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture1"), 0);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture2"), 1);
 
         glBindVertexArray(VAO);
-        glActiveTexture(texture1);
-        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture"), 0);
-
-
-
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
         // Swap the screen buffers
         glfwSwapBuffers(window);
     }
+
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+
     glfwTerminate();
     return 0;
 }
