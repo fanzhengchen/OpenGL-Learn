@@ -24,9 +24,10 @@ int main() {
     // Init GLFW
 
 
+
     OpenGL openGL(WIDTH, HEIGHT);
     openGL.init(key_callback);
-
+    GLFWwindow *window = openGL.getWindow();
     Shader shader("../vertex.glsl", "../frag.glsl");
 
 
@@ -56,7 +57,22 @@ int main() {
     glBindVertexArray(0);
 
 
-    openGL.run(shader, VAO, 6);
+    while (!glfwWindowShouldClose(window)) {
+        // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
+        glfwPollEvents();
+
+        // Render
+        // Clear the colorbuffer
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        shader.Use();
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+        // Swap the screen buffers
+        glfwSwapBuffers(window);
+    }
     glfwTerminate();
     return 0;
 }
