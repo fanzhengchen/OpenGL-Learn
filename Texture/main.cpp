@@ -19,6 +19,8 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 const GLuint WIDTH = 800, HEIGHT = 600;
 
 // The MAIN function, from here we start the application and run the game loop
+
+GLfloat mixValue = 0.5f;
 int main() {
     std::cout << "Starting GLFW context, OpenGL 3.3" << std::endl;
     // Init GLFW
@@ -63,12 +65,13 @@ int main() {
     Shader shader("../vertex.glsl", "../frag.glsl");
 
 
+    float ratio = 1.0f;
     GLfloat vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 - 一般默认都是 0 到 1 啦
-            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   2.0f, 2.0f,   // 右上
-            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f, 0.0f,   // 右下
+            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   ratio, ratio,   // 右上
+            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   ratio, 0.0f,   // 右下
             -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 2.0f    // 左上
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, ratio    // 左上
     };
 
     GLuint indices[] = {
@@ -215,6 +218,8 @@ int main() {
         glBindTexture(GL_TEXTURE_2D, texture2);
         glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture2"), 1);
 
+        glUniform1f(glGetUniformLocation(shaderProgram, "mixValue"), mixValue);
+
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
@@ -233,6 +238,18 @@ int main() {
 // Is called whenever a key is pressed/released via GLFW
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode) {
     std::cout << key << std::endl;
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
+    }else if(key == GLFW_KEY_UP && action == GLFW_PRESS){
+        mixValue += 0.1f;
+        if(mixValue > 1){
+            mixValue = 1;
+        }
+    }else if(key == GLFW_KEY_DOWN && action == GLFW_PRESS){
+        mixValue -= 0.1f;
+        if(mixValue < 0){
+            mixValue = 0;
+        }
+    }
+
 }
