@@ -25,20 +25,53 @@ int main() {
 
 
 
-    OpenGL openGL(WIDTH, HEIGHT);
-    openGL.init(key_callback);
-    GLFWwindow *window = openGL.getWindow();
+    glfwInit();
+    // Set all the required options for GLFW
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
+    // Create a GLFWwindow object that we can use for GLFW's functions
+    GLFWwindow *window = glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr);
+    if (window == nullptr) {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    glfwMakeContextCurrent(window);
+    // Set the required callback functions
+    glfwSetKeyCallback(window, key_callback);
+
+    // Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
+    glewExperimental = GL_TRUE;
+    // Initialize GLEW to setup the OpenGL Function pointers
+    if (glewInit() != GLEW_OK) {
+        std::cout << "Failed to initialize GLEW" << std::endl;
+        return -1;
+    }
+
+    // Define the viewport dimensions
+    int w, h;
+    glfwGetFramebufferSize(window, &w, &h);
+    glViewport(0, 0, w, h);
+
+
     Shader shader("../vertex.glsl", "../frag.glsl");
 
 
     GLfloat vertices[] = {
             0.5f, 0.0f, 0.0f, 0.0f, 0.5f, 0.0f,
-            -0.5f, 0.0f, 0.0f, -1.0f,-0.5f,0.0f,
-            1.0f,-0.5f,0.0f, 0.0f,-1.0f,0.0f
+            -0.5f, 0.0f, 0.0f,
     };
 
 
     GLuint VAO, VBO;
+
+    int numberOfVertices = 3;
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -68,7 +101,7 @@ int main() {
 
         shader.Use();
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glDrawArrays(GL_TRIANGLES, 0, numberOfVertices);
         glBindVertexArray(0);
         // Swap the screen buffers
         glfwSwapBuffers(window);

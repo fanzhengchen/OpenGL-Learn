@@ -72,8 +72,8 @@
       <file leaf-file-name="opengl.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opengl.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="247">
+              <caret line="45" column="27" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="45" selection-end-column="27" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
               </folding>
@@ -104,8 +104,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+            <state relative-caret-position="277">
+              <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -473,7 +473,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10555000" />
+    <option name="totallyTimeSpent" value="10649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -523,7 +523,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>75</line>
+          <line>108</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -533,7 +533,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>59</line>
+          <line>92</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -930,8 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/opengl.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="70" column="5" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="70" selection-end-column="5" />
+        <state relative-caret-position="247">
+          <caret line="45" column="27" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
           </folding>
@@ -940,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+        <state relative-caret-position="277">
+          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
           <folding />
         </state>
       </provider>
