@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -framework OpenGL -D__APPLE__ -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/TRIANGLE.dir/Triangle/DrawTriangle.cpp.o CMakeFiles/TRIANGLE.dir/Shader.cpp.o CMakeFiles/TRIANGLE.dir/opengl.cpp.o CMakeFiles/TRIANGLE.dir/TriangleColor.cpp.o  -o TRIANGLE -lGLEW -lglfw 
