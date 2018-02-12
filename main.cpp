@@ -65,14 +65,20 @@ int main() {
 
 
     GLfloat vertices[] = {
-            0.5f, 0.0f, 0.0f, 0.0f, 0.5f, 0.0f,
-            -0.5f, 0.0f, 0.0f,
+            0.5f, 0.0f, 0.0f,  1.0f, 0.0f, 0.0f,
+            0.0f, 0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
+            -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,
     };
 
 
     GLuint VAO, VBO;
 
-    int numberOfVertices = 3;
+
+
+    GLint vertexLocationHandler = 0;
+    GLint colorLocationHandler = 1 ;
+    GLint numberOfVertices = 3;
+    GLint offset = 3 * sizeof(GLfloat);
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -83,7 +89,11 @@ int main() {
 
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     // index | 3 attributes (x,y,z)  | type
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid *) 0);
+    glVertexAttribPointer(vertexLocationHandler, numberOfVertices,
+                          GL_FLOAT, GL_FALSE, offset, (GLvoid *) 0);
+
+    glVertexAttribPointer(colorLocationHandler, numberOfVertices,
+    GL_FLOAT, GL_FALSE, offset, (GLvoid *)0 + sizeof(GL_FLOAT) * 3);
 
 
     glEnableVertexAttribArray(0);
