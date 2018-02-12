@@ -7,6 +7,7 @@
 
 // GLFW
 #include <GLFW/glfw3.h>
+#include <cmath>
 
 #include "Shader.h"
 
@@ -100,6 +101,12 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         shader.Use();
+        GLuint shaderProgram = shader.Program;
+        GLfloat glTime = glfwGetTime();
+        GLfloat greenColor = sin(glTime) * 0.5f + 0.5f;
+        GLint vertextColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+        glUniform4f(vertextColorLocation, 0.0f, greenColor, 0.0f, 1.0f);
+
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, numberOfVertices);
         glBindVertexArray(0);
