@@ -14,11 +14,16 @@ add_executable(Texture ${SOURCE_FILES})
 
 MESSAGE("system is ${CMAKE_SYSTEM}")
 
+
+set(CMAKE_CXX_FLAGS " -std=c++11")
+MESSAGE(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 if (${CMAKE_SYSTEM} MATCHES "^Linux.*")
     target_link_libraries(Texture GLEW GL GLU glfw)
 elseif(${CMAKE_SYSTEM} MATCHES "^Darwin.*")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGL")
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -framework CoreFoundation")
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -D__APPLE__")
     target_link_libraries(Texture GLEW glfw)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGL -framework CoreFoundation -D__APPLE__")
     MESSAGE("${CMAKE_CXX_FLAGS}")
 endif()
 

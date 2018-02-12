@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../SOIL2/SOIL2.h
+
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/Shader.cpp
+string
+-
+fstream
+-
+sstream
+-
+iostream
+-
+GL/glew.h
+-
+Shader.h
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/Shader.h
+
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/Shader.h
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/main.cpp
+iostream
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+cmath
+-
+SOIL2.h
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/SOIL2.h
+Shader.h
+/Users/fanzhengchen/CLionProjects/OpengDemos/Texture/Shader.h
+

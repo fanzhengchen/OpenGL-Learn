@@ -64,39 +64,118 @@ int main() {
 
 
     GLfloat vertices[] = {
-            0.5f, 0.0f, 0.0f,  1.0f, 0.0f, 0.0f,
-            0.0f, 0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
-            -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+//     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
+            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
     };
 
+    GLuint indices[] = {
+            0, 1, 3,
+            1, 2, 3
+    };
 
-    GLuint VAO, VBO;
+    GLuint VAO, VBO, EBO;
 
     GLint vertexLocationHandler = 0;
     GLint colorLocationHandler = 1 ;
     GLint numberOfVertices = 3;
-    GLint offset = 6 * sizeof(GLfloat);
+
+    GLint offset = 3;
+    GLint stride = 8 * sizeof(GLfloat);
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-
+    glGenBuffers(1, &EBO);
 
     glBindVertexArray(VAO);
+
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices),indices,GL_STATIC_DRAW);
+
+
+    /**
+     * 第一个是句柄，第二个参数是一个size 范围 1-4，就是我们的一个元素占几个变量，
+     * 比如一个3维向量，那么就是3，如果是颜色rgba 那么就是4
+     * 然后就是套路 类型和是否有法向量
+     * 第五个参数是步长，一个顶点的所有相关信息占有的变量个数，比如 (x,y,z,r,g,b,a) 那么stride就是7
+     * 最后一个参数就是数据的起始地址
+     */
     // index | 3 attributes (x,y,z)  | type
-    glVertexAttribPointer(vertexLocationHandler, numberOfVertices,
-                          GL_FLOAT, GL_FALSE, offset, (GLvoid *) 0);
-    glEnableVertexAttribArray(vertexLocationHandler);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (GLvoid *) 0);
+    glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(colorLocationHandler, numberOfVertices,
-    GL_FLOAT, GL_FALSE, offset, (GLvoid *)(sizeof(GL_FLOAT) * 3));
-    glEnableVertexAttribArray(colorLocationHandler);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,stride,(GLvoid *)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(1);
 
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (GLvoid *)(6 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
 
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+
+
+    // Load and create a texture
+    /**
+     * 两个 texture 的句柄
+     */
+    GLuint texture1;
+    GLuint texture2;
+
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+
+    /**
+     * 设置参数，这是套路。。。。。
+     */
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    int width, height;
+    /**
+     * 读取图片
+     */
+    u_char *images = SOIL_load_image("../res/container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
+    /**
+     * 图片数据映射到我们的纹理上
+     */
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, images);
+    /**
+     * 产生多级渐远纹理 因为我们设置了参数 @code{glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)}，
+     * 所以必须要这一步来产生实际效果
+     */
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    /**
+     * 释放图片内存，纹理解绑
+     */
+    SOIL_free_image_data(images);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+
+    /**
+     * 第二张 texture 和 图片对应
+     */
+//    glGenTextures(2, &texture2);
+//    glBindTexture(GL_TEXTURE_2D, texture2);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//    images = SOIL_load_image("../res/awesomeface.png", &width, &height, 0, SOIL_LOAD_RGB);
+//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, images);
+//    glGenerateMipmap(GL_TEXTURE_2D);
+//    SOIL_free_image_data(images);
+//    glBindTexture(GL_TEXTURE_2D, 0);
 
 
     while (!glfwWindowShouldClose(window)) {
@@ -108,17 +187,17 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        glBindTexture(GL_TEXTURE_2D, texture1);
         shader.Use();
-        GLuint shaderProgram = shader.Program;
-        GLint offsetLocation = glGetUniformLocation(shaderProgram, "offset");
-        glUniform1f(offsetLocation, 0.5f);
-        //GLfloat glTime = glfwGetTime();
-        //GLfloat greenColor = sin(glTime) * 0.5f + 0.5f;
-        //GLint vertextColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        //glUniform4f(vertextColorLocation, 0.0f, greenColor, 0.0f, 1.0f);
+        GLuint& shaderProgram = shader.Program;
 
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, numberOfVertices);
+        glActiveTexture(texture1);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture"), 0);
+
+
+
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
         // Swap the screen buffers
         glfwSwapBuffers(window);
