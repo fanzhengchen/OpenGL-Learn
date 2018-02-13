@@ -151,12 +151,23 @@ int main() {
         shader.Use();
         int shaderProgram = shader.Program;
 
+        glBindVertexArray(VAO);
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture1"), 0);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture2"), 1);
+
         /**
-         * 这次新增的变换代码
-         */
+        * 这次新增的变换代码
+        */
         glm::mat4 transform;
-        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
         transform = glm::rotate(transform, (GLfloat) (glfwGetTime()), glm::vec3(0.0f, 0.0f, 0.1f));
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+
         GLint transformLocation = glGetUniformLocation(shaderProgram, "transform");
         /**
          * 四个参数的含义
@@ -167,15 +178,17 @@ int main() {
          */
         glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
 
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture1"), 0);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture2"), 1);
+        /**
+         * 重新搞成单位矩阵
+         */
+        transform = glm::mat4();
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+        GLfloat scaleAmount = sin(glfwGetTime());
+        transform = glm::scale(transform, glm::vec3(scaleAmount, scaleAmount, scaleAmount));
+        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
 
-        glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         glBindTexture(GL_TEXTURE_2D, 0);
