@@ -9,10 +9,12 @@ include_directories(${SOIL_DIR})
 MESSAGE(wwwww "\n${SOIL_SOURCE}")
 set(SOURCE_FILES main.cpp Shader.cpp Shader.h ${SOIL_SOURCE})
 
+
 add_executable(Transform ${SOURCE_FILES})
 #target_link_libraries(main SOIL)
 
 MESSAGE("system is ${CMAKE_SYSTEM}")
+
 
 
 set(CMAKE_CXX_FLAGS " -std=c++11")
@@ -20,6 +22,7 @@ MESSAGE(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 if (${CMAKE_SYSTEM} MATCHES "^Linux.*")
     target_link_libraries(Transform GLEW GL GLU glfw)
 elseif(${CMAKE_SYSTEM} MATCHES "^Darwin.*")
+    include_directories("/usr/local/Cellar/glm/0.9.8.5/")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGL")
     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -framework CoreFoundation")
     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -D__APPLE__")

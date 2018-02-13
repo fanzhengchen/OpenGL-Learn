@@ -12,6 +12,12 @@
 #include "SOIL2.h"
 #include "Shader.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/mat4x4.hpp>
+
+
 // Function prototypes
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
 
@@ -21,11 +27,10 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 // The MAIN function, from here we start the application and run the game loop
 
 GLfloat mixValue = 0.5f;
+
 int main() {
     std::cout << "Starting GLFW context, OpenGL 3.3" << std::endl;
     // Init GLFW
-
-
 
     glfwInit();
     // Set all the required options for GLFW
@@ -68,10 +73,10 @@ int main() {
     float ratio = 1.0f;
     GLfloat vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 - 一般默认都是 0 到 1 啦
-            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   ratio, ratio,   // 右上
-            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   ratio, 0.0f,   // 右下
-            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, ratio    // 左上
+            0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, ratio, ratio,   // 右上
+            0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, ratio, 0.0f,   // 右下
+            -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,   // 左下
+            -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, ratio    // 左上
     };
 
     GLuint indices[] = {
@@ -84,9 +89,54 @@ int main() {
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
+    glBindVertexArray(VAO);
 
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (GLvoid *) 0);
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (GLvoid *) (3 * sizeof(GL_FLOAT)));
+    glEnableVertexAttribArray(1);
+
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (GLvoid *) (6 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
+
+    glBindVertexArray(0);
+
+    GLuint texture1;
+    GLuint texture2;
+    int width, height;
+
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    u_char *image = SOIL_load_image("../res/container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    SOIL_free_image_data(image);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glGenTextures(1, &texture2);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    image = SOIL_load_image("../res/awesomeface.png", &width, &height, 0, SOIL_LOAD_RGB);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    SOIL_free_image_data(image);
+    glBindTexture(GL_TEXTURE_2D, 0);
 
 
     while (!glfwWindowShouldClose(window)) {
@@ -98,6 +148,38 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        shader.Use();
+        int shaderProgram = shader.Program;
+
+        /**
+         * 这次新增的变换代码
+         */
+        glm::mat4 transform;
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+        transform = glm::rotate(transform, (GLfloat) (glfwGetTime()), glm::vec3(0.0f, 0.0f, 0.1f));
+        GLint transformLocation = glGetUniformLocation(shaderProgram, "transform");
+        /**
+         * 四个参数的含义
+         * uniform 地址
+         * 多少个矩阵
+         * 要不要矩阵置换
+         * 这里就是数据转换(套路)
+         */
+        glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transform));
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture1"), 0);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+        glUniform1i(glGetUniformLocation(shaderProgram, "ourTexture2"), 1);
+
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        glBindTexture(GL_TEXTURE_2D, 0);
+        glBindVertexArray(0);
 
         glfwSwapBuffers(window);
     }
