@@ -1,9 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem
-wwwww
-/Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem/SOIL2/SOIL2.c;/Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem/SOIL2/etc1_utils.c;/Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem/SOIL2/image_DXT.c;/Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem/SOIL2/image_helper.c
-system is Darwin-17.4.0
-CMAKE_CXX_FLAGS -std=c++11
- -std=c++11 -framework OpenGL -framework CoreFoundation -D__APPLE__
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/fanzhengchen/CLionProjects/OpengDemos/CameraSystem/cmake-build-debug
