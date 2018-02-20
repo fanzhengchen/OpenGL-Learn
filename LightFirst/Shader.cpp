@@ -12,14 +12,6 @@
 #include <GL/glew.h>
 #include "Shader.h"
 
-//class Shader {
-//public:
-//
-//    // Constructor generates the shader on the fly
-//
-//    // Uses the current shader
-//
-//};
 
 Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath) {
     // 1. Retrieve the vertex/fragment source code from filePath
