@@ -42,7 +42,7 @@ float aspect = 45.0f;
 
 
 // Light attributes
-glm::vec3 lightPos(-1.2f, -1.0f, 0.6f);
+glm::vec3 lightPos(-1.2f, -0.2f, 0.6f);
 
 int main() {
     /**
@@ -187,10 +187,12 @@ int main() {
         GLuint objectColorLoc = glGetUniformLocation(lightingShader.Program, "objectColor");
         GLuint lightColorLoc = glGetUniformLocation(lightingShader.Program, "lightColor");
         GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "lightPos");
+        GLuint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 
         glUniform3f(objectColorLoc, 1.0f, 0.5f, 0.31f);
         glUniform3f(lightColorLoc, 1.0f, 1.0f, 1.0f);
         glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+        glUniform3f(viewPosLoc, camera.Position.x, camera.Position.y, camera.Position.z);
 
         glm::mat4 view, projection, model;
         view = camera.GetViewMatrix();
@@ -201,9 +203,9 @@ int main() {
         GLuint viewLoc = glGetUniformLocation(lightingShader.Program, "view");
         GLuint projLoc = glGetUniformLocation(lightingShader.Program, "projection");
 
+
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
-
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(containerVAO);
 
@@ -215,6 +217,7 @@ int main() {
         modelLoc = glGetUniformLocation(lampShader.Program, "model");
         viewLoc = glGetUniformLocation(lampShader.Program, "view");
         projLoc = glGetUniformLocation(lampShader.Program, "projection");
+
 
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
