@@ -23,7 +23,7 @@ void do_movement();
 
 const GLuint WIDTH = 800, HEIGHT = 600;
 
-Camera camera(glm::vec3(0.8f, -0.4f, 6.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 
 //glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 //glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -199,6 +199,7 @@ int main() {
         projection = glm::perspective(glm::radians(camera.Zoom),
                                       (GLfloat) WIDTH / (GLfloat) HEIGHT, 0.1f, 100.0f);
 
+        model = glm::translate(model, glm::vec3(0.5f, 0.2f, -3.0f));
         GLuint modelLoc = glGetUniformLocation(lightingShader.Program, "model");
         GLuint viewLoc = glGetUniformLocation(lightingShader.Program, "view");
         GLuint projLoc = glGetUniformLocation(lightingShader.Program, "projection");

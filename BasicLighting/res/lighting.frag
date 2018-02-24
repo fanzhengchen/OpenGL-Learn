@@ -31,6 +31,7 @@ void main(){
     // 32是发光值
     float spec = pow(max(dot(viewDir,reflectDir),0.0f),32);
 
+    // 计算光照反射的颜色.z向量
     vec3 specular = specularStrength * spec * lightColor;
 
     // 环境光  散射光 镜面反射光照
