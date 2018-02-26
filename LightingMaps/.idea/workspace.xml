@@ -46,8 +46,8 @@
       <file leaf-file-name="lighting.frag" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/lighting.frag">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="218">
+              <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -56,8 +56,8 @@
       <file leaf-file-name="LightingMaps.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LightingMaps.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="248" column="49" lean-forward="false" selection-start-line="248" selection-start-column="49" selection-end-line="248" selection-end-column="49" />
+            <state relative-caret-position="284">
+              <caret line="227" column="50" lean-forward="false" selection-start-line="227" selection-start-column="50" selection-end-line="227" selection-end-column="50" />
               <folding>
                 <element signature="e#48#67#0" expanded="true" />
               </folding>
@@ -93,9 +93,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Shader.cpp" />
-        <option value="$PROJECT_DIR$/res/lighting.frag" />
         <option value="$PROJECT_DIR$/res/lighting.vert" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/res/lighting.frag" />
         <option value="$PROJECT_DIR$/LightingMaps.cpp" />
       </list>
     </option>
@@ -184,12 +184,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519649604652</updated>
-      <workItem from="1519649606149" duration="2678000" />
+      <workItem from="1519649606149" duration="3705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2678000" />
+    <option name="totallyTimeSpent" value="3705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -260,14 +260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/lighting.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -284,10 +276,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/lighting.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LightingMaps.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="248" column="49" lean-forward="false" selection-start-line="248" selection-start-column="49" selection-end-line="248" selection-end-column="49" />
+        <state relative-caret-position="284">
+          <caret line="227" column="50" lean-forward="false" selection-start-line="227" selection-start-column="50" selection-end-line="227" selection-end-column="50" />
           <folding>
             <element signature="e#48#67#0" expanded="true" />
           </folding>
