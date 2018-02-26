@@ -1,0 +1,8 @@
+/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/fanzhengchen/CLionProjects/OpengDemos/LightingMaps
+SOIL" SOIL2/SOIL2.cSOIL2/etc1_utils.cSOIL2/image_DXT.cSOIL2/image_helper.c"
+system is Darwin-17.4.0
+CMAKE_CXX_FLAGS -std=c++11
+ -std=c++11 -framework OpenGL -framework CoreFoundation -D__APPLE__
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/fanzhengchen/CLionProjects/OpengDemos/LightingMaps/cmake-build-debug
