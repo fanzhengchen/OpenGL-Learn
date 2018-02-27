@@ -241,6 +241,11 @@ int main() {
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
 
+        float currentTime = glfwGetTime();
+        float x = 3.0f * cos(currentTime) * cos(currentTime);
+        float y = 3.0f * cos(currentTime) * sin(currentTime);
+        float z = 3.0f * sin(currentTime);
+        camera.Position = glm::vec3(x, y, z);
 
         //GLuint lightDirLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
         GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.position");
