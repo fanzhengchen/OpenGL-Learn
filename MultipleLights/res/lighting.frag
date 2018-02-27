@@ -35,10 +35,25 @@ struct PointLight{
     vec3 specular;
 };
 
+struct SpotLight {
+    vec3 position;
+    vec3 direction;
+    float cutOff;
+    float outerCutOff;
+
+    float constant;
+    float linear;
+    float quadratic;
+
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
 uniform DirLight dirLight;
 uniform vec3 viewPos;
 uniform Material material;
-
+uniform SpotLight spotLight;
 #define NR_POINT_LIGHTS 4
 uniform PointLight pointLights[NR_POINT_LIGHTS];
 
@@ -78,7 +93,28 @@ vec3 calcPointLight(PointLight light, vec3 normal, vec3 viewDir){
     return (ambient + diffuse + specular) * attentuation;
 }
 
+vec3 calcSpotLight(SpotLight light, vec3 norm, vec3 viewDir){
+    vec3 lightDir = normalize(light.position - FragPos);
 
+    float diff = max(dot(lightDir, norm), 0.0f);
+
+    vec3 reflectDir = reflect(-lightDir, norm);
+    float spec = pow(max(dot(reflectDir, viewDir), 0.0f), material.shininess);
+
+    float distance = length(light.position - FragPos);
+    float attentuation = 1.0f /
+        (light.constant + light.linear * distance + light.quadratic * distance * distance);
+
+    //这个是余弦值
+    float theta = dot(lightDir, normalize(-light.direction));
+    //其实是余弦值的差值啦
+    float epsilon = light.cutOff - light.outerCutOff;
+    float intensity = clamp((theta - light.outerCutOff)/epsilon, 0.0f, 1.0f);
+    vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
+    vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));
+    vec3 specular = light.specular * spec * vec3(texture(material.specular, TexCoords));
+    return (ambient + diffuse + specular) * attentuation * intensity;
+}
 
 void main(){
 
@@ -94,5 +130,6 @@ void main(){
         result += calcPointLight(pointLights[i], norm, viewDir);
     }
 
+    result += calcSpotLight(spotLight, norm , viewDir);
     color = vec4(result, 1.0f);
 }
