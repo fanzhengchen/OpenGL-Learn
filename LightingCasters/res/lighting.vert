@@ -16,7 +16,8 @@ void main(){
 
     gl_Position = projection * view * model * vec4(position, 1.0f);
     FragPos = vec3(model * vec4(position, 1.0f));
-    Normal = normal;
+    //法向量需要进行转换到世界坐标，做法就是取逆矩阵的转置矩阵 然后取左上角3x3矩阵 然后与原来的法向量相乘
+    Normal = mat3(transpose(inverse(model))) * normal;
 
     TexCoords = texCoords;
 }
