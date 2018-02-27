@@ -246,6 +246,7 @@ int main() {
         GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.position");
         GLuint lightSpotDirLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
         GLuint lightSpotCutoffLoc = glGetUniformLocation(lightingShader.Program, "light.cutOff");
+        GLuint lightSpotOuterCutOffLoc = glGetUniformLocation(lightingShader.Program, "light.outerCutOff");
         GLuint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 
 
@@ -253,6 +254,7 @@ int main() {
         glUniform3f(viewPosLoc, camera.Position.x, camera.Position.y, camera.Position.z);
         glUniform3f(lightSpotDirLoc, camera.Front.x, camera.Front.y, camera.Front.z);
         glUniform1f(lightSpotCutoffLoc, glm::cos(glm::radians(12.5f)));
+        glUniform1f(lightSpotOuterCutOffLoc, glm::cos(glm::radians(17.5f)));
 
         //printf("lightSpotCutOffLoc %f\n", glm::radians(12.5f));
 

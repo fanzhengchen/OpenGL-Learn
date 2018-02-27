@@ -42,34 +42,44 @@ void main(){
 
     // 光线的切角和正对的方向 都要取得 单位向量
     vec3 lightDir = normalize(light.position - FragPos);
+
+    float epsilon = light.cutOff - light.outerCutOff;
+
+
     float theta = dot(lightDir, normalize(-light.direction));
 
-    if(theta > light.cutOff){
+    float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0f, 1.0f);
+    //light.diffuse = light.diffuse;
 
-        //vec3 ambient = light.ambient * material.ambient;
-        // 计算纹理和材质的漫反射合成
-        vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
 
-        vec3 norm = normalize(Normal);
 
-        float diff = max(dot(norm, lightDir), 0.0f);
 
-        float distance = length(light.position - FragPos);
-        float attentuation = 1.0f / (light.constant + light.linear * distance +
+    // 计算纹理和材质的漫反射合成
+    vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
+
+    vec3 norm = normalize(Normal);
+    float diff = max(dot(norm, lightDir), 0.0f);
+
+    float distance = length(light.position - FragPos);
+    float attentuation = 1.0f / (light.constant + light.linear * distance +
             light.quadratic * distance * distance);
-        //vec3 diffuse = light.diffuse * (diff * material.diffuse);
-        vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));
+    //vec3 diffuse = light.diffuse * (diff * material.diffuse);
+    vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));
+    diffuse *= intensity;
 
-        vec3 viewDir = normalize(viewPos - FragPos);
-        vec3 reflectDir = reflect(-lightDir, norm);
-        float spec = pow(max(dot(viewDir,reflectDir), 0.0f), material.shininess);
-        //vec3 specular = light.specular * (spec * material.specular);
-        vec3 specular = light.specular * spec * vec3(texture(material.specular, TexCoords));
+    vec3 viewDir = normalize(viewPos - FragPos);
 
-        vec3 result = ambient + (specular + diffuse) * attentuation;
-        color = vec4(result, 1.0f);
-    }else{
-        vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
-        color = vec4(ambient, 1.0f);
-    }
+    vec3 reflectDir = reflect(-lightDir, norm);
+    float spec = pow(max(dot(viewDir,reflectDir), 0.0f), material.shininess);
+
+    //vec3 specular = light.specular * (spec * material.specular);
+    vec3 specular = light.specular * spec * vec3(texture(material.specular, TexCoords));
+    specular *= intensity;
+
+    vec3 result = ambient + (specular + diffuse) * attentuation;
+    color = vec4(result, 1.0f);
+
+
+
+
 }
