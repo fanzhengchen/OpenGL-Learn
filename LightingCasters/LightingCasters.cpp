@@ -44,7 +44,7 @@ float aspect = 45.0f;
 
 
 // Light attributes
-glm::vec3 lightPos(-0.2f, 0.2f, 2.0f);
+glm::vec3 lightPos(-0.2f, -0.2f, 2.0f);
 
 int main() {
     /**
@@ -241,27 +241,22 @@ int main() {
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
 
-        //GLuint objectColorLoc = glGetUniformLocation(lightingShader.Program, "objectColor");
-        //GLuint lightColorLoc = glGetUniformLocation(lightingShader.Program, "lightColor");
-        //GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.position");
-        GLuint lightDirLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
+
+        //GLuint lightDirLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
+        GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
         GLuint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 
-        //glUniform3f(objectColorLoc, 1.0f, 0.5f, 0.31f);
-        //glUniform3f(lightColorLoc, 1.0f, 1.0f, 1.0f);
-        //glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
-        glUniform3f(lightDirLoc, -0.2f, -1.0f, -0.3f);
+
+        //glUniform3f(lightDirLoc, -0.2f, -1.0f, -0.3f);
+        glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
         glUniform3f(viewPosLoc, camera.Position.x, camera.Position.y, camera.Position.z);
 
-        //Set lights properties
-        //glm::vec3 lightColor;
-        //float timeNow = glfwGetTime();
-        //lightColor.x = sin(timeNow * 2.0f);
-        //lightColor.y = sin(timeNow * 0.7f);
-        //lightColor.z = sin(timeNow * 1.3f);
 
-        //glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f);
-        //glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f);
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "light.constant"), 1.0f);
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "light.linear"), 0.09f);
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "light.quadratic"), 0.32f);
+
+
         glm::vec3 diffuseColor = glm::vec3(0.2f);
         glm::vec3 ambientColor = glm::vec3(0.5f);
         glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"),
@@ -300,26 +295,26 @@ int main() {
             glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
-        //glDrawArrays(GL_TRIANGLES, 0, 36);
+        //glDrawArrays(GL_TRIAesNGLES, 0, 36);
         glBindVertexArray(0);
 
 
-//        lampShader.Use();
-//        modelLoc = glGetUniformLocation(lampShader.Program, "model");
-//        viewLoc = glGetUniformLocation(lampShader.Program, "view");
-//        projLoc = glGetUniformLocation(lampShader.Program, "projection");
-//
-//
-//        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-//        glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
-//        model = glm::mat4();
-//        model = glm::translate(model, lightPos);
-//        model = glm::scale(model, glm::vec3(0.2f));
-//        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-//
-//        glBindVertexArray(lightVAO);
-//        glDrawArrays(GL_TRIANGLES, 0, 36);
-//        glBindVertexArray(0);
+        lampShader.Use();
+        modelLoc = glGetUniformLocation(lampShader.Program, "model");
+        viewLoc = glGetUniformLocation(lampShader.Program, "view");
+        projLoc = glGetUniformLocation(lampShader.Program, "projection");
+
+
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f));
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+        glBindVertexArray(lightVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
 
         // Swap the screen buffers
         glfwSwapBuffers(window);
