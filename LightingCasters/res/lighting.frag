@@ -25,6 +25,8 @@ struct Light{
     float constant;
     float linear;
     float quadratic;
+
+    float cutoff;
 };
 
 uniform vec3 viewPos;

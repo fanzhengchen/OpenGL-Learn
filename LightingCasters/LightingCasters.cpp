@@ -243,7 +243,7 @@ int main() {
 
 
         //GLuint lightDirLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
-        GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.direction");
+        GLuint lightPosLoc = glGetUniformLocation(lightingShader.Program, "light.position");
         GLuint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 
 
