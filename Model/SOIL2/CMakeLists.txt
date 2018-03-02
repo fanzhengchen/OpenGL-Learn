@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.6)
 
 add_library(SOIL SHARED SOIL2.c etc1_utils.c image_helper.c image_DXT.c)
 IF(APPLE)
-    FIND_LIBRARY(COREFOUNDATION_LIBRARY NAMES CoreFoundation)
-    FIND_LIBRARY(OPENGL_LIBRARY NAMES OpenGL)
     target_link_libraries(SOIL ${COREFOUNDATION_LIBRARY} ${OPENGL_LIBRARY})
 ENDIF(APPLE)
 
