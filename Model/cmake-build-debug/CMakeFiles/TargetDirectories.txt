@@ -1,3 +1,6 @@
 /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles/Lighting.dir
+/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/SOIL2/CMakeFiles/rebuild_cache.dir
+/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/SOIL2/CMakeFiles/edit_cache.dir
+/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/SOIL2/CMakeFiles/SOIL.dir

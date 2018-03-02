@@ -63,10 +63,10 @@ CMAKE_BINARY_DIR = /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-buil
 # Target rules for target CMakeFiles/Lighting.dir
 
 # All Build rule for target.
-CMakeFiles/Lighting.dir/all:
+CMakeFiles/Lighting.dir/all: SOIL2/CMakeFiles/SOIL.dir/all
 	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/depend
 	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Lighting"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Lighting"
 .PHONY : CMakeFiles/Lighting.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/Lighting.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Lighting.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Lighting.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Lighting.dir/rule
@@ -93,6 +93,61 @@ CMakeFiles/Lighting.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/Lighting.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory SOIL2
+
+# Convenience name for "all" pass in the directory.
+SOIL2/all: SOIL2/CMakeFiles/SOIL.dir/all
+
+.PHONY : SOIL2/all
+
+# Convenience name for "clean" pass in the directory.
+SOIL2/clean: SOIL2/CMakeFiles/SOIL.dir/clean
+
+.PHONY : SOIL2/clean
+
+# Convenience name for "preinstall" pass in the directory.
+SOIL2/preinstall:
+
+.PHONY : SOIL2/preinstall
+
+#=============================================================================
+# Target rules for target SOIL2/CMakeFiles/SOIL.dir
+
+# All Build rule for target.
+SOIL2/CMakeFiles/SOIL.dir/all:
+	$(MAKE) -f SOIL2/CMakeFiles/SOIL.dir/build.make SOIL2/CMakeFiles/SOIL.dir/depend
+	$(MAKE) -f SOIL2/CMakeFiles/SOIL.dir/build.make SOIL2/CMakeFiles/SOIL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=4,5,6,7,8 "Built target SOIL"
+.PHONY : SOIL2/CMakeFiles/SOIL.dir/all
+
+# Include target in all.
+all: SOIL2/CMakeFiles/SOIL.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+SOIL2/CMakeFiles/SOIL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 SOIL2/CMakeFiles/SOIL.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles 0
+.PHONY : SOIL2/CMakeFiles/SOIL.dir/rule
+
+# Convenience name for target.
+SOIL: SOIL2/CMakeFiles/SOIL.dir/rule
+
+.PHONY : SOIL
+
+# clean rule for target.
+SOIL2/CMakeFiles/SOIL.dir/clean:
+	$(MAKE) -f SOIL2/CMakeFiles/SOIL.dir/build.make SOIL2/CMakeFiles/SOIL.dir/clean
+.PHONY : SOIL2/CMakeFiles/SOIL.dir/clean
+
+# clean rule for target.
+clean: SOIL2/CMakeFiles/SOIL.dir/clean
 
 .PHONY : clean
 

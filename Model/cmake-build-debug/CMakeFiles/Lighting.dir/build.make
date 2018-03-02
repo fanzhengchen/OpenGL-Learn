@@ -105,123 +105,20 @@ CMakeFiles/Lighting.dir/Shader.cpp.o.provides: CMakeFiles/Lighting.dir/Shader.cp
 CMakeFiles/Lighting.dir/Shader.cpp.o.provides.build: CMakeFiles/Lighting.dir/Shader.cpp.o
 
 
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o: CMakeFiles/Lighting.dir/flags.make
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o: ../SOIL2/SOIL2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o   -c /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/SOIL2.c
-
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/SOIL2.c > CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.i
-
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/SOIL2.c -o CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.s
-
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.requires:
-
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.requires
-
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.provides: CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.requires
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.provides.build
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.provides
-
-CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.provides.build: CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o
-
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o: CMakeFiles/Lighting.dir/flags.make
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o: ../SOIL2/etc1_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o   -c /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/etc1_utils.c
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/etc1_utils.c > CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.i
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/etc1_utils.c -o CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.s
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.requires:
-
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.requires
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.provides: CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.requires
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.provides.build
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.provides
-
-CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.provides.build: CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o
-
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o: CMakeFiles/Lighting.dir/flags.make
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o: ../SOIL2/image_DXT.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o   -c /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_DXT.c
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_DXT.c > CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.i
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_DXT.c -o CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.s
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.requires:
-
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.requires
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.provides: CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.requires
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.provides.build
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.provides
-
-CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.provides.build: CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o
-
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o: CMakeFiles/Lighting.dir/flags.make
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o: ../SOIL2/image_helper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o   -c /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_helper.c
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lighting.dir/SOIL2/image_helper.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_helper.c > CMakeFiles/Lighting.dir/SOIL2/image_helper.c.i
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lighting.dir/SOIL2/image_helper.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/fanzhengchen/CLionProjects/OpengDemos/Model/SOIL2/image_helper.c -o CMakeFiles/Lighting.dir/SOIL2/image_helper.c.s
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.requires:
-
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.requires
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.provides: CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.requires
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.provides.build
-.PHONY : CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.provides
-
-CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.provides.build: CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o
-
-
 # Object files for target Lighting
 Lighting_OBJECTS = \
 "CMakeFiles/Lighting.dir/main.cpp.o" \
-"CMakeFiles/Lighting.dir/Shader.cpp.o" \
-"CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o" \
-"CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o" \
-"CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o" \
-"CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o"
+"CMakeFiles/Lighting.dir/Shader.cpp.o"
 
 # External object files for target Lighting
 Lighting_EXTERNAL_OBJECTS =
 
 Lighting: CMakeFiles/Lighting.dir/main.cpp.o
 Lighting: CMakeFiles/Lighting.dir/Shader.cpp.o
-Lighting: CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o
-Lighting: CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o
-Lighting: CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o
-Lighting: CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o
 Lighting: CMakeFiles/Lighting.dir/build.make
+Lighting: SOIL2/libSOIL.dylib
 Lighting: CMakeFiles/Lighting.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Lighting"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fanzhengchen/CLionProjects/OpengDemos/Model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Lighting"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lighting.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -231,10 +128,6 @@ CMakeFiles/Lighting.dir/build: Lighting
 
 CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/main.cpp.o.requires
 CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/Shader.cpp.o.requires
-CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o.requires
-CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o.requires
-CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o.requires
-CMakeFiles/Lighting.dir/requires: CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o.requires
 
 .PHONY : CMakeFiles/Lighting.dir/requires
 

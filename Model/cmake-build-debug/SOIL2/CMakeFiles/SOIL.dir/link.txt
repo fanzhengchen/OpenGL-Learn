@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -g -dynamiclib -Wl,-headerpad_max_install_names  -o libSOIL.dylib -install_name @rpath/libSOIL.dylib CMakeFiles/SOIL.dir/SOIL2.c.o CMakeFiles/SOIL.dir/etc1_utils.c.o CMakeFiles/SOIL.dir/image_helper.c.o CMakeFiles/SOIL.dir/image_DXT.c.o -framework CoreFoundation -framework OpenGL 

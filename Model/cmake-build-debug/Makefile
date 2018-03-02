@@ -123,113 +123,18 @@ Lighting/fast:
 	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/build
 .PHONY : Lighting/fast
 
-SOIL2/SOIL2.o: SOIL2/SOIL2.c.o
+#=============================================================================
+# Target rules for targets named SOIL
 
-.PHONY : SOIL2/SOIL2.o
+# Build rule for target.
+SOIL: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SOIL
+.PHONY : SOIL
 
-# target to build an object file
-SOIL2/SOIL2.c.o:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.o
-.PHONY : SOIL2/SOIL2.c.o
-
-SOIL2/SOIL2.i: SOIL2/SOIL2.c.i
-
-.PHONY : SOIL2/SOIL2.i
-
-# target to preprocess a source file
-SOIL2/SOIL2.c.i:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.i
-.PHONY : SOIL2/SOIL2.c.i
-
-SOIL2/SOIL2.s: SOIL2/SOIL2.c.s
-
-.PHONY : SOIL2/SOIL2.s
-
-# target to generate assembly for a file
-SOIL2/SOIL2.c.s:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/SOIL2.c.s
-.PHONY : SOIL2/SOIL2.c.s
-
-SOIL2/etc1_utils.o: SOIL2/etc1_utils.c.o
-
-.PHONY : SOIL2/etc1_utils.o
-
-# target to build an object file
-SOIL2/etc1_utils.c.o:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.o
-.PHONY : SOIL2/etc1_utils.c.o
-
-SOIL2/etc1_utils.i: SOIL2/etc1_utils.c.i
-
-.PHONY : SOIL2/etc1_utils.i
-
-# target to preprocess a source file
-SOIL2/etc1_utils.c.i:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.i
-.PHONY : SOIL2/etc1_utils.c.i
-
-SOIL2/etc1_utils.s: SOIL2/etc1_utils.c.s
-
-.PHONY : SOIL2/etc1_utils.s
-
-# target to generate assembly for a file
-SOIL2/etc1_utils.c.s:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/etc1_utils.c.s
-.PHONY : SOIL2/etc1_utils.c.s
-
-SOIL2/image_DXT.o: SOIL2/image_DXT.c.o
-
-.PHONY : SOIL2/image_DXT.o
-
-# target to build an object file
-SOIL2/image_DXT.c.o:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.o
-.PHONY : SOIL2/image_DXT.c.o
-
-SOIL2/image_DXT.i: SOIL2/image_DXT.c.i
-
-.PHONY : SOIL2/image_DXT.i
-
-# target to preprocess a source file
-SOIL2/image_DXT.c.i:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.i
-.PHONY : SOIL2/image_DXT.c.i
-
-SOIL2/image_DXT.s: SOIL2/image_DXT.c.s
-
-.PHONY : SOIL2/image_DXT.s
-
-# target to generate assembly for a file
-SOIL2/image_DXT.c.s:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_DXT.c.s
-.PHONY : SOIL2/image_DXT.c.s
-
-SOIL2/image_helper.o: SOIL2/image_helper.c.o
-
-.PHONY : SOIL2/image_helper.o
-
-# target to build an object file
-SOIL2/image_helper.c.o:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_helper.c.o
-.PHONY : SOIL2/image_helper.c.o
-
-SOIL2/image_helper.i: SOIL2/image_helper.c.i
-
-.PHONY : SOIL2/image_helper.i
-
-# target to preprocess a source file
-SOIL2/image_helper.c.i:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_helper.c.i
-.PHONY : SOIL2/image_helper.c.i
-
-SOIL2/image_helper.s: SOIL2/image_helper.c.s
-
-.PHONY : SOIL2/image_helper.s
-
-# target to generate assembly for a file
-SOIL2/image_helper.c.s:
-	$(MAKE) -f CMakeFiles/Lighting.dir/build.make CMakeFiles/Lighting.dir/SOIL2/image_helper.c.s
-.PHONY : SOIL2/image_helper.c.s
+# fast build rule for target.
+SOIL/fast:
+	$(MAKE) -f SOIL2/CMakeFiles/SOIL.dir/build.make SOIL2/CMakeFiles/SOIL.dir/build
+.PHONY : SOIL/fast
 
 Shader.o: Shader.cpp.o
 
@@ -294,18 +199,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lighting"
-	@echo "... SOIL2/SOIL2.o"
-	@echo "... SOIL2/SOIL2.i"
-	@echo "... SOIL2/SOIL2.s"
-	@echo "... SOIL2/etc1_utils.o"
-	@echo "... SOIL2/etc1_utils.i"
-	@echo "... SOIL2/etc1_utils.s"
-	@echo "... SOIL2/image_DXT.o"
-	@echo "... SOIL2/image_DXT.i"
-	@echo "... SOIL2/image_DXT.s"
-	@echo "... SOIL2/image_helper.o"
-	@echo "... SOIL2/image_helper.i"
-	@echo "... SOIL2/image_helper.s"
+	@echo "... SOIL"
 	@echo "... Shader.o"
 	@echo "... Shader.i"
 	@echo "... Shader.s"
